@@ -1,0 +1,33 @@
+{
+	"eslintConfig": {
+		"extends": ["react-app", "shared-config"],
+		"rules": {
+			"additional-rule": "warn"
+		},
+		
+		"overrides": [
+			{
+				"files": "**/*.+(ts|tsx)",
+				"plugins": ["@typescript-eslint/eslint-plugin"],
+				"extends": [
+					"plugin:@typescript-eslint/eslint-recommended",
+					"plugin:@typescript-eslint/recommended",
+					"plugin:import/typescript",
+ 					"plugin:@typescript-eslint/recommended-requiring-type-checking"
+				],
+				"rules": {
+					"@typescript-eslint/no-unused-vars": 1,
+					"@typescript-eslint/interface-name-prefix": "off",
+					"@typescript-eslint/no-use-before-define": "off",
+					"@typescript-eslint/explicit-function-return-type": "off"
+				}
+			}
+		],
+		"env": {
+			"es6": true,
+			"jest/globals": true,
+			"browser": true,
+			"node": true
+		}
+	}
+}
